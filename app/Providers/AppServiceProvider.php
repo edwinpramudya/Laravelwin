@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void{
         View::composer('components.footer', function ($view){
-            $view->with('kont', Kontak::all());
+            $view->with('kont', Kontak::first());
         });
     }
 }

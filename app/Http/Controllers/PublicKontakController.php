@@ -8,7 +8,7 @@ class PublicKontakController extends Controller
 {
     public function index()
     {
-        $kont = Kontak::all();
+        $kont = Kontak::first();
         return view('contact',[
             'title' => 'kontak',
             'kont' => $kont,

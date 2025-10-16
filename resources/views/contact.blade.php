@@ -7,15 +7,13 @@
 <section class="px-3 sm:px-6 py-6 sm:py-8 md:py-12 max-w-7xl mx-auto">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
     
-    @foreach ($kont as $item)
     <div>
       <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">Customer Service</h2>
       <div class="space-y-2 mb-4 sm:mb-6">
-        <p class="text-sm sm:text-base"><strong>Head Office:</strong> {{ $item->alamat }}</p>
-        <p class="text-sm sm:text-base"><strong>Phone:</strong> {{ $item->no_hp }}</p>
-        <p class="text-sm sm:text-base"><strong>Email:</strong> {{ $item->email }}</p>
+        <p class="text-sm sm:text-base"><strong>Head Office:</strong> {{ $kont->alamat }}</p>
+        <p class="text-sm sm:text-base"><strong>Phone:</strong> {{ $kont->no_hp }}</p>
+        <p class="text-sm sm:text-base"><strong>Email:</strong> {{ $kont->email }}</p>
       </div>
-      @endforeach
 
       <div class="w-full h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden shadow-md">
         <iframe 
