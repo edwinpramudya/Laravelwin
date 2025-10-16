@@ -8,7 +8,7 @@ class PublicStrukturteamController extends Controller
 {
       public function index()
     {
-        $stru = Strukturteam::all();
+        $stru = Strukturteam::first();
         return view('teamstructure', compact('stru'));
     }
 }

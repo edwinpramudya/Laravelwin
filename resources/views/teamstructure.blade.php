@@ -9,15 +9,13 @@
 </div>
 
 <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mb-8 sm:mb-16 md:mb-20">
-  @foreach ($stru as $item)
     <div class="mb-4 sm:mb-8">
       <img 
-        src="{{ asset('img/team/' . $item->gambar) }}" 
-        alt="Struktur Organisasi {{ $loop->iteration }}" 
+        src="{{ asset('img/team/' . $stru->gambar) }}" 
+        alt="Struktur Organisasi" 
         class="w-full h-auto rounded shadow-sm sm:shadow-md hover:shadow-lg transition-shadow duration-300"
       >
     </div>
-  @endforeach
 </div>
 
 @endsection
