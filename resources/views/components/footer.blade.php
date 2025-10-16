@@ -20,24 +20,22 @@
       </ul>
     </div>
 
-    @foreach ($kont as $item)
     <div class="text-center sm:text-left">
       <h4 class="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">Contact & Social Media</h4>
       <ul class="space-y-1.5 sm:space-y-2 text-gray-600 text-xs sm:text-sm md:text-base">
         <li class="flex items-start justify-center sm:justify-start">
           <span class="mr-2">📍</span>
-          <span>{{ $item->alamat }}</span>
+          <span>{{ $kont->alamat }}</span>
         </li>
         <li class="flex items-center justify-center sm:justify-start">
           <span class="mr-2">✉️</span>
-          <span class="break-all">{{ $item->email }}</span>
+          <span class="break-all">{{ $kont->email }}</span>
         </li>
         <li class="flex items-center justify-center sm:justify-start">
           <span class="mr-2">📞</span>
-          <span>{{ $item->no_hp }}</span>
+          <span>{{ $kont->no_hp }}</span>
         </li>
       </ul>
-      @endforeach
 
       <div class="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
         <p class="font-semibold text-gray-700 text-sm sm:text-base">Follow Us:</p>
