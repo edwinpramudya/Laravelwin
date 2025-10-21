@@ -33,36 +33,48 @@
                             </thead>
                             <tbody>
                                 @foreach($types as $type)
-                                <tr>
-                                    <td>{{ $type->product->nama ?? '-' }}</td>
-                                    <td>{{ $type->nama }}</td>
-                                    <td>
-                                        @if($type->gambar)
-                                            <img src="{{ asset('img/produk/'.$type->gambar) }}" 
-                                                 alt="{{ $type->nama }}" 
-                                                 class="img-thumbnail rounded"
-                                                 style="width: 64px; height: 64px; object-fit: cover;">
-                                        @else
-                                            <span class="text-muted">-</span>
-                                        @endif
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="{{ route('admin.product-types.edit', $type->id) }}" 
-                                           class="btn btn-sm btn-outline-primary me-1" title="Edit">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <form action="{{ route('admin.product-types.destroy', $type->id) }}" 
-                                              method="POST" 
-                                              class="d-inline"
-                                              onsubmit="return confirm('Yakin hapus Product Type ini?')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-outline-danger" title="Hapus">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td>{{ $type->product->nama ?? '-' }}</td>
+                                        <td>{{ $type->nama }}</td>
+                                        <td>
+                                            @if($type->gambar)
+                                                <img src="{{ asset('img/produk/'.$type->gambar) }}" 
+                                                    alt="{{ $type->nama }}" 
+                                                    class="img-thumbnail rounded"
+                                                    style="width: 64px; height: 64px; object-fit: cover;">
+                                            @else
+                                                <span class="text-muted">-</span>
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            @if($type->pdf)
+                                                <a href="{{ asset('pdf/produk/'.$type->pdf) }}" 
+                                                   target="_blank" 
+                                                   class="btn btn-sm btn-outline-success" 
+                                                   title="Lihat PDF">
+                                                    <i class="fas fa-file-pdf"></i> Lihat
+                                                </a>
+                                            @else
+                                                <span class="text-muted">-</span>
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="{{ route('admin.product-types.edit', $type->id) }}" 
+                                               class="btn btn-sm btn-outline-primary me-1" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <form action="{{ route('admin.product-types.destroy', $type->id) }}" 
+                                                  method="POST" 
+                                                  class="d-inline"
+                                                  onsubmit="return confirm('Yakin hapus Product Type ini?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-outline-danger" title="Hapus">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>

@@ -16,10 +16,13 @@
 
                             <!-- Jenis Kelamin -->
                             <div class="mb-3">
-                                <label for="jenis_kelamin" class="form-label fw-semibold">Jenis Kelamin (laki-laki/perempuan)</label>
-                                <input type="text" name="jenis_kelamin" id="jenis_kelamin"
-                                       value="{{ old('jenis_kelamin', $karir->jenis_kelamin) }}"
-                                       class="form-control @error('jenis_kelamin') is-invalid @enderror">
+                                <label for="jenis_kelamin" class="form-label fw-semibold">Jenis Kelamin</label>
+                                <select name="jenis_kelamin" id="jenis_kelamin"
+                                        class="form-select @error('jenis_kelamin') is-invalid @enderror">
+                                    <option value="" disabled {{ old('jenis_kelamin', $karir->jenis_kelamin) == '' ? 'selected' : '' }}>-- Pilih Jenis Kelamin --</option>
+                                    <option value="Laki-laki" {{ old('jenis_kelamin', $karir->jenis_kelamin) == 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                                    <option value="Perempuan" {{ old('jenis_kelamin', $karir->jenis_kelamin) == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                </select>
                                 @error('jenis_kelamin')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

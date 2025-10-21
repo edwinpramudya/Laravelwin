@@ -17,7 +17,7 @@
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Pilih Product</label>
                                 <select name="product_id" class="form-select @error('product_id') is-invalid @enderror" required>
-                                    <option value="">Pilih Product</option>
+                                    <option value="" selected disabled>--Pilih Product--</option>
                                     @foreach($products as $product)
                                         <option value="{{ $product->id }}">{{ $product->nama }}</option>
                                     @endforeach
